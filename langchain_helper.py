@@ -17,7 +17,13 @@ from langchain_community.utilities import SQLDatabase
 from langchain_experimental.sql import SQLDatabaseChain
 from langchain_core.example_selectors import SemanticSimilarityExampleSelector
 from langchain_core.prompts import FewShotPromptTemplate, PromptTemplate
-from langchain.chains.sql_database.prompt import PROMPT_SUFFIX, _mysql_prompt
+#from langchain.chains.sql_database.prompt import PROMPT_SUFFIX, _mysql_prompt
+PROMPT_SUFFIX = """
+Begin!
+
+Question: {input}
+SQLQuery:
+"""
 
 from few_shots import few_shots
 

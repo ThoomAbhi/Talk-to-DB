@@ -21,7 +21,7 @@ The system is intelligent enough to generate accurate queries for given question
   - Hugging face embeddings
   - Streamlit for UI
   - Langchain framework
-  - Chromadb as a vector store
+  - FAISS as a vector store
   - Few shot learning
 - In the UI, store manager will ask questions in a natural language and it will produce the answers
 

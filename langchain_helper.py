@@ -1,4 +1,5 @@
-from langchain_community.chat_models import ChatGoogleGenerativeAI
+#from langchain_community.chat_models import ChatGoogleGenerativeAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.utilities import SQLDatabase

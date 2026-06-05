@@ -30,10 +30,12 @@ def get_few_shot_db_chain():
     db_user = os.environ["DB_USER"]
     db_password = os.environ["DB_PASSWORD"]
     db_host = os.environ["DB_HOST"]
+    db_port = os.environ["DB_PORT"]
     db_name = os.environ["DB_NAME"]
 
-    db = SQLDatabase.from_uri(f"mysql+pymysql://{db_user}:{db_password}@{db_host}/{db_name}",
-                              sample_rows_in_table_info=3)
+    db = SQLDatabase.from_uri(
+    f"mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}",
+    sample_rows_in_table_info=3)
     llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=os.environ["GOOGLE_API_KEY"], temperature=0.1)
 
     embeddings = HuggingFaceEmbeddings(model_name='sentence-transformers/all-MiniLM-L6-v2')

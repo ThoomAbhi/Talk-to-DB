@@ -40,10 +40,10 @@ def get_few_shot_db_chain():
     db_name = os.environ["DB_NAME"]
 
     db = SQLDatabase.from_uri(
-    f"mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}",
+    f"mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}?ssl_disabled=false",
     engine_args={
         "connect_args": {
-            "ssl-mode": "REQUIRED"   # top level, NOT nested inside "ssl": {}
+            "ssl": {}   # empty dict forces SSL on for pymysql
         }
     },
     sample_rows_in_table_info=3)

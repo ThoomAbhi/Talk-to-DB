@@ -43,7 +43,7 @@ def get_few_shot_db_chain():
     f"mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}",
     engine_args={
         "connect_args": {
-            "ssl_mode": "REQUIRED"   # top level, NOT nested inside "ssl": {}
+            "ssl-mode": "REQUIRED"   # top level, NOT nested inside "ssl": {}
         }
     },
     sample_rows_in_table_info=3)
